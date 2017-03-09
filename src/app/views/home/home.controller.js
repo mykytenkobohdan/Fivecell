@@ -1,4 +1,4 @@
-export class MainController {
+export class HomeController {
   constructor ($timeout, webDevTec, toastr) {
     'ngInject';
 
