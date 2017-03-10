@@ -1,1 +1,19 @@
-<header class="header"></header>
+<header ng-if="$root.showHeader" class="header container-fluid">
+  <ul class="nav nav-justified">
+    <li>
+      <a ui-sref="home">HOME</a>
+    </li>
+    <li>
+      <a ui-sref="contact">CONTACT</a>
+    </li>
+    <li>
+      <a ui-sref="projects">PROJECTS</a>
+    </li>
+    <li>
+      <a ui-sref="skills">SKILLS</a>
+    </li>
+    <li>
+      <a ui-sref="about">ABOUT</a>
+    </li>
+  </ul>
+</header>

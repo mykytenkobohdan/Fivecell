@@ -3,11 +3,16 @@
 import {config} from './index.config';
 import {routerConfig} from './index.route';
 import {runBlock} from './index.run';
+// import {translateContent} from './index.translate';
+
 import {HomeController} from './views/home/home.controller';
-import {GithubContributorService} from '../app/components/githubContributor/githubContributor.service';
-import {WebDevTecService} from '../app/components/webDevTec/webDevTec.service';
-import {MalarkeyDirective} from '../app/components/malarkey/malarkey.directive';
-import {HeaderDirective} from '../app/components/header/header.directive';
+import {ContactController} from  './views/contact/contact.controller';
+import {ProjectsController} from './views/projects/projects.controller';
+import {AboutController} from './views/about/about.controller';
+import {SkillsController} from './views/skills/skills.controller';
+
+import {HeaderDirective} from './components/header/header.directive';
+import {ParallaxDirective} from './components/parallax/parallax.directive';
 
 angular.module('fivecellArchitects',
   [
@@ -19,15 +24,20 @@ angular.module('fivecellArchitects',
     'ngAria',
     'ngResource',
     'ui.router',
-    'toastr'
+    'toastr',
+    // 'pascalprecht.translate'
   ])
-  .constant('malarkey', malarkey)
-  .constant('moment', moment)
   .config(config)
   .config(routerConfig)
+  // .config(translateContent)
+
   .run(runBlock)
-  .service('githubContributor', GithubContributorService)
-  .service('webDevTec', WebDevTecService)
+
   .controller('HomeController', HomeController)
-  .directive('acmeMalarkey', MalarkeyDirective)
-  .directive('headerComponent', HeaderDirective);
+  .controller('ContactController', ContactController)
+  .controller('ProjectsController', ProjectsController)
+  .controller('AboutController', AboutController)
+  .controller('SkillsController', SkillsController)
+
+  .directive('headerComponent', HeaderDirective)
+  .directive('parallaxComponent', ParallaxDirective);

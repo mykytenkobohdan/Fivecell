@@ -6,7 +6,7 @@ export function HeaderDirective() {
     replace: true,
     templateUrl: 'app/components/header/header.html',
     controller: HeaderController,
-    controllerAs: 'vm',
+    controllerAs: 'header',
     bindToController: true
   };
 }

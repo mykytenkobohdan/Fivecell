@@ -1,7 +1,7 @@
 export function runBlock($rootScope, $log) {
   'ngInject';
 
-  let $stateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+  let $stateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
     $log.debug('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
   });
 
@@ -10,8 +10,10 @@ export function runBlock($rootScope, $log) {
     $log.debug(arguments);
   });
 
-  let $stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-    $log.debug('$stateChangeSuccess to ' + toState.name + '- fired once the state transition is complete.');
+  let $stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+    $log.debug('$stateChangeSuccess to ' + toState.name + '- fired once the state transition is complete.', toState);
+    //Set the variable "showHeader" from state parameters UI routers "showheader"
+    $rootScope.showHeader = toState.showheader != false;
   });
 
   let $viewContentLoaded = $rootScope.$on('$viewContentLoaded', function (event) {
