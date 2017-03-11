@@ -15,5 +15,14 @@
     <li>
       <a ui-sref="about">ABOUT</a>
     </li>
+    <li class="dropdown">
+      <button class="btn btn-default dropdown-toggle" ng-click="header.activateDropdown()">
+        {{ header.language.toUpperCase() }}
+      </button>
+      <ul class="dropdown-menu" ng-show="header.toggle">
+        <li ng-click="header.selectLanguage('en')">EN</li>
+        <li ng-click="header.selectLanguage('ru')">RU</li>
+      </ul>
+    </li>
   </ul>
 </header>
