@@ -1,11 +1,10 @@
+/** @ngInject */
 export function HeaderDirective() {
-  'ngInject';
-
   return {
     restrict: 'E',
     replace: true,
     templateUrl: 'app/components/header/header.html',
-    controller: HeaderController,
+    controller:HeaderController,
     controllerAs: 'header',
     bindToController: true,
     link: function () {
@@ -13,21 +12,26 @@ export function HeaderDirective() {
   };
 }
 
-function HeaderController($rootScope) {
-  'ngInject';
-  let vm = this;
+class HeaderController {
+  /** @ngInject */
 
-  $rootScope.language = 'en';
-  vm.language = $rootScope.language;
-  vm.toggle = false;
+  constructor($rootScope, $translate) {
+    let vm = this;
+    vm.translate = $translate;
+    vm.root = $rootScope;
+    vm.language = 'en';
+    vm.toggle = true;
+    vm.activateDropdown();
+  }
 
-  vm.selectLanguage = function (lang) {
-    vm.language = lang;
-    $rootScope.language = lang;
-    vm.toggle = false;
-  };
+  selectLanguage(lang) {
+    this.language = lang;
+    this.toggle = false;
+    this.root.language = lang;
+    this.translate.use(lang);
+  }
 
-  vm.activateDropdown = function () {
-    return vm.toggle = vm.toggle === false ? true : false;
-  };
+  activateDropdown() {
+    this.toggle = this.toggle === false ? true : false;
+  }
 }
