@@ -3,7 +3,7 @@
 import {config} from './index.config';
 import {routerConfig} from './index.route';
 import {runBlock} from './index.run';
-// import {translateContent} from './index.translate';
+import {translateContent} from './index.translate';
 
 import {HomeController} from './views/home/home.controller';
 import {ContactController} from  './views/contact/contact.controller';
@@ -25,11 +25,11 @@ angular.module('fivecellArchitects',
     'ngResource',
     'ui.router',
     'toastr',
-    // 'pascalprecht.translate'
+    'pascalprecht.translate'
   ])
   .config(config)
   .config(routerConfig)
-  // .config(translateContent)
+  .config(translateContent)
 
   .run(runBlock)
 

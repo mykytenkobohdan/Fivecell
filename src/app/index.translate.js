@@ -1,4 +1,4 @@
-export function translateContent($translateProvider, $log) {
+export function translateContent($translateProvider) {
   'ngInject';
 
   $translateProvider.translations('en', {
