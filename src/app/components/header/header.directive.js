@@ -4,7 +4,7 @@ export function HeaderDirective() {
     restrict: 'E',
     replace: true,
     templateUrl: 'app/components/header/header.html',
-    controller:HeaderController,
+    controller: HeaderController,
     controllerAs: 'header',
     bindToController: true,
     link: function () {
@@ -19,16 +19,28 @@ class HeaderController {
     let vm = this;
     vm.translate = $translate;
     vm.root = $rootScope;
-    vm.language = 'en';
-    vm.toggle = true;
-    vm.activateDropdown();
+    let localLang = localStorage.getItem('lang');
+
+    if (localLang) {
+      vm.saveLang(localLang);
+    } else {
+      vm.language = 'en';
+    }
+
+    vm.toggle = false;
   }
 
   selectLanguage(lang) {
-    this.language = lang;
     this.toggle = false;
-    this.root.language = lang;
-    this.translate.use(lang);
+    localStorage.clear();
+    localStorage.setItem('lang', lang);
+    this.saveLang(localStorage.getItem('lang'))
+  }
+
+  saveLang(language) {
+    this.language = language;
+    this.root.language = language;
+    this.translate.use(language);
   }
 
   activateDropdown() {

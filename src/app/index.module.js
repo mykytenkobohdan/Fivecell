@@ -1,7 +1,7 @@
 import {config} from './index.config';
 import {routerConfig} from './index.route';
 import {runBlock} from './index.run';
-import {translateContent} from './translate/translate.config';
+import {translateConfig} from './translate/translate.config';
 
 import {HomeController} from './views/home/home.controller';
 import {ContactController} from  './views/contact/contact.controller';
@@ -11,6 +11,8 @@ import {SkillsController} from './views/skills/skills.controller';
 
 import {HeaderDirective} from './components/header/header.directive';
 import {ParallaxDirective} from './components/parallax/parallax.directive';
+
+import {getTranslateJson} from './translate/translate.service';
 
 angular.module('fivecellArchitects',
   [
@@ -27,7 +29,7 @@ angular.module('fivecellArchitects',
   ])
   .config(config)
   .config(routerConfig)
-  .config(translateContent)
+  .config(translateConfig)
 
   .run(runBlock)
 
@@ -38,4 +40,6 @@ angular.module('fivecellArchitects',
   .controller('SkillsController', SkillsController)
 
   .directive('headerComponent', HeaderDirective)
-  .directive('parallaxComponent', ParallaxDirective);
+  .directive('parallaxComponent', ParallaxDirective)
+
+  .service('getTranslateJson', getTranslateJson);
