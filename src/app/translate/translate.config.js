@@ -1,6 +1,6 @@
-/** @ngInject */
 export function translateConfig($translateProvider) {
-  // 'ngInject';
+  'ngInject';
+
   $translateProvider.translations('en', {
     "HOME":"HOME",
     "CONTACT":"CONTACT",

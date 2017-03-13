@@ -1,19 +1,19 @@
 <header ng-if="$root.showHeader" class="header container-fluid">
   <ul class="nav nav-justified">
     <li>
-      <a translate="HOME" ui-sref="home"></a>
+      <a ui-sref="home">{{'HOME' | translate}}</a>
     </li>
     <li>
-      <a translate="CONTACT" ui-sref="contact"></a>
+      <a ui-sref="contact">{{'CONTACT' | translate}}</a>
     </li>
     <li>
-      <a translate="PROJECTS" ui-sref="projects"></a>
+      <a ui-sref="projects">{{'PROJECTS' | translate}}</a>
     </li>
     <li>
-      <a translate="SKILLS" ui-sref="skills"></a>
+      <a ui-sref="skills">{{'SKILLS' | translate}}</a>
     </li>
     <li>
-      <a translate="ABOUT" ui-sref="about"></a>
+      <a ui-sref="about">{{'ABOUT' | translate}}</a>
     </li>
     <li class="dropdown">
       <button class="btn btn-default dropdown-toggle" ng-click="header.activateDropdown()">

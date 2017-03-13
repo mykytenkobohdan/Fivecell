@@ -1,5 +1,6 @@
-/** @ngInject */
 export function HeaderDirective() {
+  'ngInject';
+
   return {
     restrict: 'E',
     replace: true,
@@ -13,9 +14,9 @@ export function HeaderDirective() {
 }
 
 class HeaderController {
-  /** @ngInject */
+  constructor($rootScope, $translate, getTranslate) {
+    'ngInject';
 
-  constructor($rootScope, $translate) {
     let vm = this;
     vm.translate = $translate;
     vm.root = $rootScope;
@@ -28,6 +29,16 @@ class HeaderController {
     }
 
     vm.toggle = false;
+
+    console.log(this.getTranslates(getTranslate));
+  }
+
+  getTranslates(getTranslate) {
+    return getTranslate.getTranslateLang().then((data) => {
+      this.data = data;
+      console.log(this.data);
+      // return this.data;
+    });
   }
 
   selectLanguage(lang) {
