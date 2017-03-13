@@ -10,6 +10,6 @@ export function translateConfig($translateProvider) {
     ]
   });
 
+  $translateProvider.useLocalStorage();
   $translateProvider.useSanitizeValueStrategy(null);
-  // $translateProvider.preferredLanguage('en');
 }
