@@ -1,9 +1,7 @@
-[
-  {
-    "HOME":"HOME",
-    "CONTACT":"CONTACT",
-    "PROJECTS":"PROJECTS",
-    "SKILLS":"SKILLS",
-    "ABOUT":"ABOUT"
-  }
-]
+{
+  "HOME": "Home",
+  "CONTACT": "Contact",
+  "PROJECTS": "Projects",
+  "SKILLS": "Skills",
+  "ABOUT": "About"
+}

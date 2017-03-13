@@ -8,13 +8,12 @@ export function HeaderDirective() {
     controller: HeaderController,
     controllerAs: 'header',
     bindToController: true,
-    link: function () {
-    }
+    link: function () {}
   };
 }
 
 class HeaderController {
-  constructor($rootScope, $translate, getTranslate) {
+  constructor($rootScope, $translate) {
     'ngInject';
 
     let vm = this;
@@ -29,16 +28,6 @@ class HeaderController {
     }
 
     vm.toggle = false;
-
-    console.log(this.getTranslates(getTranslate));
-  }
-
-  getTranslates(getTranslate) {
-    return getTranslate.getTranslateLang().then((data) => {
-      this.data = data;
-      console.log(this.data);
-      // return this.data;
-    });
   }
 
   selectLanguage(lang) {
@@ -55,6 +44,6 @@ class HeaderController {
   }
 
   activateDropdown() {
-    this.toggle = this.toggle === false ? true : false;
+    this.toggle = this.toggle === false;
   }
 }

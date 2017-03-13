@@ -12,8 +12,6 @@ import {SkillsController} from './views/skills/skills.controller';
 import {HeaderDirective} from './components/header/header.directive';
 import {ParallaxDirective} from './components/parallax/parallax.directive';
 
-import {getTranslateService} from './translate/translate.service';
-
 angular.module('fivecellArchitects',
   [
     'ngAnimate',
@@ -32,8 +30,6 @@ angular.module('fivecellArchitects',
   .config(translateConfig)
 
   .run(runBlock)
-
-  .service('getTranslate', getTranslateService)
 
   .controller('HomeController', HomeController)
   .controller('ContactController', ContactController)
