@@ -8,18 +8,28 @@ export function HeaderDirective() {
     controller: HeaderController,
     controllerAs: 'header',
     bindToController: true,
-    link: function () {}
+    link: function (scope, element, attr) {
+      console.log('scope:', scope, 'attr :', attr);
+      angular.element('body').keydown(function (eventObject) {
+        if (eventObject.which == 27) {
+          scope.$broadcast('header', 'false');
+        }
+      })
+    }
   };
 }
 
 class HeaderController {
-  constructor($rootScope, $translate) {
+  constructor($scope, $rootScope, $translate) {
     'ngInject';
 
     let vm = this;
+    let localLang = localStorage.getItem('lang');
     vm.translate = $translate;
     vm.root = $rootScope;
-    let localLang = localStorage.getItem('lang');
+    vm.toggle = false;
+    vm.menu = false;
+    console.log(vm.menu);
 
     if (localLang) {
       vm.saveLang(localLang);
@@ -27,7 +37,9 @@ class HeaderController {
       vm.language = 'en';
     }
 
-    vm.toggle = false;
+    $scope.$on('header', function (e, data) {
+      $scope.header.menu = data;
+    })
   }
 
   selectLanguage(lang) {
@@ -41,9 +53,5 @@ class HeaderController {
     this.language = language;
     this.root.language = language;
     this.translate.use(language);
-  }
-
-  activateDropdown() {
-    this.toggle = this.toggle === false;
   }
 }

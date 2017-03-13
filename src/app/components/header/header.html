@@ -1,28 +1,44 @@
-<header ng-if="$root.showHeader" class="header container-fluid">
-  <ul class="nav nav-justified">
-    <li>
-      <a ui-sref="home">{{'HOME' | translate}}</a>
-    </li>
-    <li>
-      <a ui-sref="contact">{{'CONTACT' | translate}}</a>
-    </li>
-    <li>
-      <a ui-sref="projects">{{'PROJECTS' | translate}}</a>
-    </li>
-    <li>
-      <a ui-sref="skills">{{'SKILLS' | translate}}</a>
-    </li>
-    <li>
-      <a ui-sref="about">{{'ABOUT' | translate}}</a>
-    </li>
-    <li class="dropdown">
-      <button class="btn btn-default dropdown-toggle" ng-click="header.activateDropdown()">
+<header class="header container-fluid">
+  <div class="header_nav">
+    <div ng-if="$root.showHeader" ng-click="header.menu = header.menu === false" class="header_button menu-button pull-left">
+      <span>menu</span>
+      <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </div>
+    <div class="dropdown pull-left">
+      <button class="header_button dropdown-toggle" ng-click="header.toggle = header.toggle === false">
         {{ header.language.toUpperCase() }}
       </button>
       <ul class="dropdown-menu" ng-if="header.toggle">
         <li ng-click="header.selectLanguage('en')">EN</li>
         <li ng-click="header.selectLanguage('ru')">RU</li>
       </ul>
-    </li>
-  </ul>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div ng-if="$root.showHeader">
+    <div ng-if="header.menu" class="overlay-menu">
+      <span class="close" ng-click="header.menu = false">close</span>
+      <ul class="">
+        <li>
+          <a ui-sref="home">{{'HOME' | translate}}</a>
+        </li>
+        <li>
+          <a ui-sref="contact">{{'CONTACT' | translate}}</a>
+        </li>
+        <li>
+          <a ui-sref="projects">{{'PROJECTS' | translate}}</a>
+        </li>
+        <li>
+          <a ui-sref="skills">{{'SKILLS' | translate}}</a>
+        </li>
+        <li>
+          <a ui-sref="about">{{'ABOUT' | translate}}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
+
