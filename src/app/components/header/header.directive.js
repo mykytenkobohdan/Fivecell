@@ -12,7 +12,7 @@ export function HeaderDirective() {
       console.log('scope:', scope, 'attr :', attr);
       angular.element('body').keydown(function (eventObject) {
         if (eventObject.which == 27) {
-          scope.$broadcast('header', 'false');
+          scope.$broadcast('header', false);
         }
       })
     }
@@ -29,7 +29,6 @@ class HeaderController {
     vm.root = $rootScope;
     vm.toggle = false;
     vm.menu = false;
-    console.log(vm.menu);
 
     if (localLang) {
       vm.saveLang(localLang);
@@ -38,7 +37,8 @@ class HeaderController {
     }
 
     $scope.$on('header', function (e, data) {
-      $scope.header.menu = data;
+      console.log('EVENT',e, data);
+      vm.menu = data;
     })
   }
 
