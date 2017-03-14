@@ -42,7 +42,7 @@
   font-weight: 600;
   outline: none;
   border: none;
-  background-color:#505354 ;
+  background-color: #505354;
   width: 30px;
   text-align: center;
   font-size: 12px;
@@ -54,7 +54,7 @@
   border: none;
   box-shadow: none;
   min-width: 0;
-  margin:-1px 0 0;
+  margin: -1px 0 0;
   padding: 0;
   transition: 0.3s;
   overflow: hidden;
@@ -74,7 +74,7 @@
   height: 0;
 }
 
-.dropdown-menu li:first-child{
+.dropdown-menu li:first-child {
   margin-top: 1px;
 }
 
@@ -122,4 +122,21 @@
 
 .ng-enter-active.overlay-menu {
   opacity: 1;
+}
+
+.overlay-menu_wrapp {
+  height: 64vh;
+  margin-top: 23vh;
+  margin-right: 8%;
+  color: #fff;
+}
+
+.overlay-menu_nav li {
+  margin-top: 8vh;
+}
+
+.overlay-menu_nav li a:focus,
+.overlay-menu_nav li a:hover,
+.overlay-menu_nav li a {
+  color: #fff;
 }

@@ -20,25 +20,26 @@
 
   <div ng-if="$root.showHeader">
     <div ng-if="header.menu" class="overlay-menu">
-      <span class="close" ng-click="header.menu = false">close</span>
-      <ul class="pull-right text-right">
-        <li>
-          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="home">{{'HOME' | translate}}</a>
-        </li>
-        <li>
-          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="contact">{{'CONTACT' | translate}}</a>
-        </li>
-        <li>
-          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="projects">{{'PROJECTS' | translate}}</a>
-        </li>
-        <li>
-          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="skills">{{'SKILLS' | translate}}</a>
-        </li>
-        <li>
-          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="about">{{'ABOUT' | translate}}</a>
-        </li>
-      </ul>
-      </nav>
+      <div class="pull-right text-right overlay-menu_wrapp">
+        <div class="" ng-click="header.menu = false">close</div>
+        <ul class="overlay-menu_nav">
+          <li>
+            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="home">{{'HOME' | translate}}</a>
+          </li>
+          <li>
+            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="contact">{{'CONTACT' | translate}}</a>
+          </li>
+          <li>
+            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="projects">{{'PROJECTS' | translate}}</a>
+          </li>
+          <li>
+            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="skills">{{'SKILLS' | translate}}</a>
+          </li>
+          <li>
+            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="about">{{'ABOUT' | translate}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
 </header>
 
