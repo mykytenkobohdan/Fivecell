@@ -10,6 +10,19 @@ body {
   color: #505354;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;

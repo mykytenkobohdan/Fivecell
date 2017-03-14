@@ -21,7 +21,7 @@
   <div ng-if="$root.showHeader">
     <div ng-if="header.menu" class="overlay-menu">
       <span class="close" ng-click="header.menu = false">close</span>
-      <ul class="">
+      <ul class="pull-right text-right">
         <li>
           <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="home">{{'HOME' | translate}}</a>
         </li>
