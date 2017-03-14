@@ -1,6 +1,7 @@
 <header class="header container-fluid">
   <div class="header_nav">
-    <div ng-if="$root.showHeader" ng-click="header.menu = header.menu === false" class="header_button menu-button pull-left">
+    <div ng-if="$root.showHeader" ng-click="header.menu = header.menu === false"
+         class="header_button menu-button pull-left">
       <span>menu</span>
       <span class="glyphicon glyphicon-menu-hamburger"></span>
     </div>
@@ -22,23 +23,23 @@
       <span class="close" ng-click="header.menu = false">close</span>
       <ul class="">
         <li>
-          <a ui-sref="home">{{'HOME' | translate}}</a>
+          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="home">{{'HOME' | translate}}</a>
         </li>
         <li>
-          <a ui-sref="contact">{{'CONTACT' | translate}}</a>
+          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="contact">{{'CONTACT' | translate}}</a>
         </li>
         <li>
-          <a ui-sref="projects">{{'PROJECTS' | translate}}</a>
+          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="projects">{{'PROJECTS' | translate}}</a>
         </li>
         <li>
-          <a ui-sref="skills">{{'SKILLS' | translate}}</a>
+          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="skills">{{'SKILLS' | translate}}</a>
         </li>
         <li>
-          <a ui-sref="about">{{'ABOUT' | translate}}</a>
+          <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="about">{{'ABOUT' | translate}}</a>
         </li>
       </ul>
-    </nav>
-  </div>
+      </nav>
+    </div>
 </header>
 
 

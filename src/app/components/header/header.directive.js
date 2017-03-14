@@ -14,7 +14,11 @@ export function HeaderDirective() {
         if (eventObject.which == 27) {
           scope.$broadcast('header', false);
         }
-      })
+      });
+      element.find('.overlay-menu.ng-scope').click(function (e) {
+        console.log("this is a directive");
+        scope.$broadcast('click-on-link', 'CHLEN');
+      });
     }
   };
 }
@@ -29,6 +33,7 @@ class HeaderController {
     vm.root = $rootScope;
     vm.toggle = false;
     vm.menu = false;
+    vm.$scopeOn = $scope.$on();
 
     if (localLang) {
       vm.saveLang(localLang);
@@ -36,9 +41,15 @@ class HeaderController {
       vm.language = 'en';
     }
 
-    $scope.$on('header', function (e, data) {
-      console.log('EVENT',e, data);
+    $scope.$on('header', (e, data) => {
       vm.menu = data;
+      vm.toggle = data;
+      $scope.$apply();
+    });
+
+    $scope.$on('click-on-link', (e, data) => {
+        console.log(data);
+      $scope.$apply();
     })
   }
 

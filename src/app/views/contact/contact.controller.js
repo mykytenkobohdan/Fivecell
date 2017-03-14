@@ -1,3 +1,3 @@
 export class ContactController {
-  constructor () {}
+  constructor() {}
 }

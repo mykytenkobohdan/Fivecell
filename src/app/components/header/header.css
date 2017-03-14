@@ -53,8 +53,27 @@
   border: none;
   box-shadow: none;
   min-width: 0;
-  margin: 0;
+  margin:-1px 0 0;
   padding: 0;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.ng-enter.dropdown-menu {
+  height: 0;
+}
+
+.ng-leave.dropdown-menu,
+.ng-enter-active.dropdown-menu {
+  height: 63px;
+}
+
+.ng-leave-active.dropdown-menu {
+  height: 0;
+}
+
+.dropdown-menu li:first-child{
+  margin-top: 1px;
 }
 
 .dropdown-menu li {
@@ -76,10 +95,27 @@
 
 .overlay-menu {
   position: fixed;
+  transition: 0.3s;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 3;
+}
+
+.ng-enter.overlay-menu {
+  opacity: 0;
+}
+
+.ng-leave-active.overlay-menu {
+  opacity: 0;
+}
+
+.ng-leave.overlay-menu {
+  opacity: 1;
+}
+
+.ng-enter-active.overlay-menu {
+  opacity: 1;
 }
