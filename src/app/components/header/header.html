@@ -21,22 +21,34 @@
   <div ng-if="$root.showHeader">
     <div ng-if="header.menu" class="overlay-menu">
       <div class="pull-right text-right overlay-menu_wrapp">
-        <div class="" ng-click="header.menu = false">close</div>
+        <div class="close-menu_wrapp" ng-click="header.menu = false">
+          <div class="close-menu"></div>
+        </div>
         <ul class="overlay-menu_nav">
           <li>
-            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="home">{{'HOME' | translate}}</a>
+            <a class="overlay-menu_link" data-hover="{{'HOME' | translate}}"
+               ng-click="(header.toggle = false) || (header.menu = false)"
+               ui-sref="home">{{'HOME' | translate}}</a>
           </li>
           <li>
-            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="contact">{{'CONTACT' | translate}}</a>
+            <a data-hover="{{'CONTACT' | translate}}" class="overlay-menu_link"
+              ng-click="(header.toggle = false) || (header.menu = false)"
+               ui-sref="contact">{{'CONTACT' | translate}}</a>
           </li>
           <li>
-            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="projects">{{'PROJECTS' | translate}}</a>
+            <a data-hover="{{'PROJECTS' | translate}}" class="overlay-menu_link"
+               ng-click="(header.toggle = false) || (header.menu = false)"
+               ui-sref="projects">{{'PROJECTS' | translate}}</a>
           </li>
           <li>
-            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="skills">{{'SKILLS' | translate}}</a>
+            <a data-hover="{{'SKILLS' | translate}}" class="overlay-menu_link"
+               ng-click="(header.toggle = false) || (header.menu = false)"
+               ui-sref="skills">{{'SKILLS' | translate}}</a>
           </li>
           <li>
-            <a ng-click="(header.toggle = false) || (header.menu = false)" ui-sref="about">{{'ABOUT' | translate}}</a>
+            <a data-hover="{{'ABOUT' | translate}}" class="overlay-menu_link"
+               ng-click="(header.toggle = false) || (header.menu = false)"
+               ui-sref="about">{{'ABOUT' | translate}}</a>
           </li>
         </ul>
       </div>
