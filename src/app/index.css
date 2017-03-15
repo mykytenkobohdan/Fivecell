@@ -37,3 +37,12 @@ a:hover {
 .thumbnail img.pull-right {
   width: 50px;
 }
+
+.main-title {
+  font-weight: 300;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #505354;
+}
+
+

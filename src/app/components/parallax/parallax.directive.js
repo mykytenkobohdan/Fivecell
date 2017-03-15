@@ -15,7 +15,7 @@ export function ParallaxDirective() {
 function initializeParallax(scope, element) {
   'ngInject';
 
-  element.parallax({
+  let parallaxOption = {
     relativeInput: false,
     clipRelativeInput: false,
     calibrationThreshold: 100,
@@ -35,7 +35,9 @@ function initializeParallax(scope, element) {
     originY: 0.5,
     pointerEvents: true,
     precision: 1
-  })
+  };
+
+  element.parallax(parallaxOption);
 }
 
 class ParallaxController {}

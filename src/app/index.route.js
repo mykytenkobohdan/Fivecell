@@ -16,7 +16,7 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
       url: '/contact',
       templateUrl: 'app/views/contact/contact.html',
       controller: 'ContactController',
-      controllerAs: 'contact',
+      controllerAs: 'contact'
     })
     .state('about', {
       url: '/about',

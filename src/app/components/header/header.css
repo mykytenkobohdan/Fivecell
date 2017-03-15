@@ -48,6 +48,14 @@
   font-size: 12px;
 }
 
+.dropdown-toggle:focus,
+.dropdown-toggle:hover,
+.dropdown-toggle:active {
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+}
+
 .dropdown-menu {
   display: block;
   background: transparent;
@@ -142,8 +150,10 @@
   display: inline-block;
 }
 
+.overlay-menu_link:focus,
 .overlay-menu_link:hover {
-  color: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.06);
 }
 
 .overlay-menu_link:before {

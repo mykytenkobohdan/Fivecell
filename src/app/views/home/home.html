@@ -1,16 +1,17 @@
 <parallax-component></parallax-component>
-<ul style="position: absolute">
-  <li>
-    <a ui-sref="contact">{{'CONTACT' | translate}}</a>
-  </li>
-  <li>
-    <a ui-sref="projects">{{'PROJECTS' | translate}}</a>
-  </li>
-  <li>
-    <a ui-sref="skills">{{'SKILLS' | translate}}</a>
-  </li>
-  <li>
-    <a ui-sref="about">{{'ABOUT' | translate}}</a>
-  </li>
-</ul>
-
+<div class="home">
+  <ul class="home_nav">
+    <li class="home_item home_item--one">
+      <a class="main-title" ui-sref="contact">{{'CONTACT' | translate}}</a>
+    </li>
+    <li class="home_item home_item--two">
+      <a class="main-title" ui-sref="projects">{{'PROJECTS' | translate}}</a>
+    </li>
+    <li class="home_item home_item--three">
+      <a class="main-title" ui-sref="skills">{{'SKILLS' | translate}}</a>
+    </li>
+    <li class="home_item home_item--four">
+      <a class="main-title" ui-sref="about">{{'ABOUT' | translate}}</a>
+    </li>
+  </ul>
+</div>
