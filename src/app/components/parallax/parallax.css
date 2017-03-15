@@ -1,0 +1,39 @@
+.parallax {
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden !important;
+  filter: blur(3px);
+}
+
+.parallax:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(143, 136, 168, 0.3);
+}
+
+.layer_one-smoke img {
+  transform: translateY(-50%);
+}
+
+.layer_two-smoke img {
+  transform: translateX(50%);
+}
+
+.layer_bg div {
+  background: url(/assets/images/imagesbase.jpg) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  width: 110%;
+  left: -5%;
+  top: -5vh;
+  bottom: 0;
+  height: 110vh;
+}
+

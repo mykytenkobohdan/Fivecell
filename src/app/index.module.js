@@ -39,5 +39,3 @@ angular.module('fivecellArchitects',
 
   .directive('headerComponent', HeaderDirective)
   .directive('parallaxComponent', ParallaxDirective);
-
-
