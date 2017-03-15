@@ -7,8 +7,13 @@ export function ParallaxDirective() {
     templateUrl: 'app/components/parallax/parallax.html',
     controller: ParallaxController,
     controllerAs: 'parallax',
-    bindToController: true
+    bindToController: true,
+    link: initializeParallax
   };
+}
+
+function initializeParallax() {
+
 }
 
 class ParallaxController {}

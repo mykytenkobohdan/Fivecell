@@ -8,16 +8,11 @@ export function HeaderDirective() {
     controller: HeaderController,
     controllerAs: 'header',
     bindToController: true,
-    link: function (scope, element, attr) {
-      console.log('scope:', scope, 'attr :', attr);
+    link: function (scope) {
       angular.element('body').keydown(function (eventObject) {
         if (eventObject.which == 27) {
           scope.$broadcast('header', false);
         }
-      });
-      element.find('.overlay-menu.ng-scope').click(function (e) {
-        console.log("this is a directive");
-        scope.$broadcast('click-on-link', 'CHLEN');
       });
     }
   };
@@ -46,11 +41,6 @@ class HeaderController {
       vm.toggle = data;
       $scope.$apply();
     });
-
-    $scope.$on('click-on-link', (e, data) => {
-        console.log(data);
-      $scope.$apply();
-    })
   }
 
   selectLanguage(lang) {
