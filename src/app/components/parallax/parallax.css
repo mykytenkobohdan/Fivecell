@@ -8,15 +8,15 @@
   filter: blur(3px);
 }
 
-.parallax:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(143, 136, 168, 0.3);
-}
+/*.parallax:after {*/
+  /*content: '';*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*background: rgba(141, 152, 134, 0.3);*/
+/*}*/
 
 .layer_one-smoke img {
   transform: translateY(-50%);

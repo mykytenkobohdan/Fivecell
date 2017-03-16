@@ -45,4 +45,17 @@ a:hover {
   color: #505354;
 }
 
+.main-title--cross {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.main-title--cross:after {
+  content: '✖';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
