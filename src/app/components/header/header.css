@@ -6,7 +6,7 @@
   top: 20px;
   right: 10px;
   position: fixed;
-  z-index: 2;
+  z-index: 7;
 }
 
 .header_button {
@@ -111,7 +111,7 @@
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
-  z-index: 3;
+  z-index: 8;
   font-size: 2rem;
   font-weight: 300;
 }

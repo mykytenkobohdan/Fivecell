@@ -1,6 +1,7 @@
 .contact {
   position: relative;
   z-index: 6;
+  margin-top: 10vh;
 }
 
 .content_box {
@@ -26,17 +27,40 @@
   color: #505354;
 }
 
+.contact_form label {
+  margin-top: 30px;
+}
+
 .contact_form textarea {
   resize: none;
+  height: 25vh;
 }
 
 .contact_input {
   display: block;
   background: transparent;
-  border:2px solid #505354;
+  border: 2px solid #505354;
   width: 100%;
-  padding:15px 10px;
+  padding: 15px 10px;
   font-weight: 300;
+}
+
+.btn-main {
+  background-color: #505354;
+  border: 2px solid #505354;
+  padding: 10px 15px;
+  outline: none;
+  transition: 0.3s;
+  color: #fff;
+  display: inline-block;
+  margin: 7% auto 3%;
+  min-width: 100px;
+  letter-spacing: 1px;
+}
+
+.btn-main:hover {
+  background: transparent;
+  color: #505354;
 }
 
 .contact_input:focus {
@@ -58,5 +82,13 @@
 @media all and (max-width: 767px) {
   .content_box {
     width: 100%;
+  }
+
+  .btn-main {
+    margin-bottom: 7%;
+  }
+
+  .contact {
+    margin-top: 40px;
   }
 }

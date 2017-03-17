@@ -33,15 +33,18 @@
   <div class="row">
     <form class="contact_form" action="">
       <fieldset>
-        <label class="col-sm-6">
+        <label class="col-xs-12 col-sm-6">
           <input placeholder="{{'NAME' | translate}}" class="contact_input" type="text">
         </label>
-        <label class="col-sm-6">
+        <label class="col-xs-12 col-sm-6">
           <input class="contact_input" type="email" placeholder="Email">
         </label>
-        <label class="col-sm-12">
-          <textarea class="contact_input"></textarea>
+        <label class="col-xs-12">
+          <textarea placeholder="{{'COMMENT' | translate}}" class="contact_input"></textarea>
         </label>
+        <div class="text-center">
+          <button type="button" class="btn-main">{{'SEND' | translate}}</button>
+        </div>
       </fieldset>
     </form>
   </div>
