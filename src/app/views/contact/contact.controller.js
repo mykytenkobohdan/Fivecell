@@ -1,12 +1,18 @@
 export class ContactController {
-  constructor($http, $scope) {
+  constructor($scope) {
     'ngInject';
-    this.scope = $scope;
 
+    this.scope = $scope;
   }
 
   sendMail(name, email, text) {
-    console.log(name, email, text);
+    this.data = {
+      "name": name,
+      "email": email,
+      "text": text
+    };
+
+    console.log(angular.toJson(this.data));
 
     this.scope.contact.name = angular.copy('');
     this.scope.contact.email = angular.copy('');
