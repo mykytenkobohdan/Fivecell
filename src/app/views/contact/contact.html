@@ -31,19 +31,20 @@
   </div>
   <div class="clearfix"></div>
   <div class="row">
-    <form class="contact_form" action="">
+    <form name="Form" class="contact_form" ng-submit="contact.sendMail(contact.name, contact.email, contact.text)">
       <fieldset>
         <label class="col-xs-12 col-sm-6">
-          <input placeholder="{{'NAME' | translate}}" class="contact_input" type="text">
+          <input name="Name" ng-model="contact.name" placeholder="{{'NAME' | translate}}" class="contact_input" type="text" required>
         </label>
         <label class="col-xs-12 col-sm-6">
-          <input class="contact_input" type="email" placeholder="Email">
+          <input ng-model="contact.email" class="contact_input" type="email" placeholder="Email" required>
         </label>
         <label class="col-xs-12">
-          <textarea placeholder="{{'COMMENT' | translate}}" class="contact_input"></textarea>
+          <textarea ng-model="contact.text" placeholder="{{'COMMENT' | translate}}" class="contact_input"></textarea>
         </label>
         <div class="text-center">
-          <button type="button" class="btn-main">{{'SEND' | translate}}</button>
+          <input type="submit" class="btn-main" value="{{'SEND' | translate}}">
+          <!--<button ng-click="" type="button" class="btn-main">{{'SEND' | translate}}</button>-->
         </div>
       </fieldset>
     </form>
