@@ -18,6 +18,10 @@
   /*background: rgba(141, 152, 134, 0.3);*/
 /*}*/
 
+.layer {
+  /*transition: .01s ease-in-out !important;*/
+}
+
 .layer_one-smoke img {
   transform: translateY(-50%);
 }
