@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
 html {
   font-size: 62.5%;
@@ -21,6 +22,10 @@ a:focus,
 a:active,
 a:hover {
   text-decoration: none;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
 }
 
 .browsehappy {
