@@ -8,7 +8,7 @@ html {
 body {
   font: 1.4rem/1.2 'Montserrat', sans-serif;
   background-color: #ebebeb;
-  color: #505354;
+  color: #111;
 }
 
 ul {
@@ -50,7 +50,6 @@ p {
   font-weight: 300;
   font-size: 1.6rem;
   text-transform: uppercase;
-  color: #505354;
 }
 
 .main-title--cross {

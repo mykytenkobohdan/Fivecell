@@ -31,7 +31,7 @@
 }
 
 .layer_bg div {
-  background: url(/assets/images/imagesbase.jpg) no-repeat center;
+  background: url(/assets/images/maxresdefault.png) no-repeat center;
   background-size: cover;
   position: absolute;
   width: 110%;

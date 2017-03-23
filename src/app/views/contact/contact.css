@@ -15,7 +15,7 @@
 
 .contact_link:focus,
 .contact_link {
-  color: #505354;
+  color: #111;
 }
 
 .contact_link {
@@ -24,7 +24,7 @@
 
 .contact_link:hover {
   text-decoration: underline;
-  color: #505354;
+  color: #111;
 }
 
 .contact_form label {

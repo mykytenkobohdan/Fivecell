@@ -1,8 +1,9 @@
 export class ContactController {
-  constructor($scope) {
+  constructor($scope, SendMailService) {
     'ngInject';
 
     this.scope = $scope;
+    this.SendMail = SendMailService;
   }
 
   sendMail(name, email, text) {
@@ -12,8 +13,7 @@ export class ContactController {
       "text": text
     };
 
-    console.log(angular.toJson(this.data));
-
+    this.SendMail.getData(this.data)
     this.successSend();
     this.clearForm();
   }

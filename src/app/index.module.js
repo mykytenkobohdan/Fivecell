@@ -3,6 +3,8 @@ import {routerConfig} from './index.route';
 import {runBlock} from './index.run';
 import {translateConfig} from './translate/translate.config';
 
+import {SendMailService} from './services/send-mail.service';
+
 import {HomeController} from './views/home/home.controller';
 import {ContactController} from  './views/contact/contact.controller';
 import {ProjectsController} from './views/projects/projects.controller';
@@ -30,6 +32,8 @@ angular.module('fivecellArchitects',
   .config(translateConfig)
 
   .run(runBlock)
+
+  .service('SendMailService', SendMailService)
 
   .controller('HomeController', HomeController)
   .controller('ContactController', ContactController)
