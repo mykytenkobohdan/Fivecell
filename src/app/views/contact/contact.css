@@ -78,7 +78,7 @@
 }
 
 .btn-success:after {
-  content: 'SUCCESS!';
+  content:attr(data-click);
   opacity: 1;
   top:50%;
 
