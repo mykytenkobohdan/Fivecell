@@ -1,9 +1,10 @@
 export class ContactController {
-  constructor($scope, SendMailService) {
+  constructor($scope, $timeout, SendMailService) {
     'ngInject';
 
     this.scope = $scope;
     this.SendMail = SendMailService;
+    this.$timeout = $timeout;
   }
 
   sendMail(name, email, text) {
@@ -13,13 +14,15 @@ export class ContactController {
       "text": text
     };
 
-    this.SendMail.getData(this.data)
+    this.SendMail.getData(this.data);
+
     this.successSend();
     this.clearForm();
   }
 
   successSend() {
-    console.log('Success!');
+    this.success = 'btn-success';
+    this.$timeout(()=>{this.success = ''}, 3000);
   }
 
   clearForm() {
