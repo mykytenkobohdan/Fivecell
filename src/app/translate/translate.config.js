@@ -8,8 +8,9 @@ export function translateConfig($translateProvider) {
         suffix: '.json'
       }
     ]
-  });
+  })
 
-  $translateProvider.useLocalStorage();
-  $translateProvider.useSanitizeValueStrategy(null);
+    .preferredLanguage('en')
+    .useLocalStorage()
+    .useSanitizeValueStrategy(null);
 }
