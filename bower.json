@@ -24,7 +24,8 @@
     "components-font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.3"
+    "angular-mocks": "~1.5.3",
+    "cloud9carousel": "^2.1.0"
   },
   "overrides": {
     "bootstrap": {
