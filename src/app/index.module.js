@@ -13,6 +13,7 @@ import {SkillsController} from './views/skills/skills.controller';
 
 import {HeaderDirective} from './components/header/header.directive';
 import {ParallaxDirective} from './components/parallax/parallax.directive';
+import {SkillsDirective} from './views/skills/skills.directive';
 
 angular.module('fivecellArchitects',
   [
@@ -42,4 +43,5 @@ angular.module('fivecellArchitects',
   .controller('SkillsController', SkillsController)
 
   .directive('headerComponent', HeaderDirective)
-  .directive('parallaxComponent', ParallaxDirective);
+  .directive('parallaxComponent', ParallaxDirective)
+  .directive('skillsComponent', SkillsDirective);
