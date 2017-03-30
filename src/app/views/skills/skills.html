@@ -1,3 +1,33 @@
-<div>
-  <h1>{{'SKILLS' | translate}}</h1>
-</div>
+<skills-component>
+  <section class="container carousel">
+    <h2 class="main-title main-title--cross text-center">{{'SKILLS' | translate}}</h2>
+    <div id="carousel">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/js.png" alt="JS">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/angular.png" alt="Angular">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/nodejs.png" alt="NodeJS">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/mongodb.png" alt="MongoDB">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/html-5.png" alt="HTML">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/css3.png" alt="CSS">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/sass.png" alt="SASS">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/bootstrap.png" alt="Bootstrap">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/gulp.png" alt="Gulp">
+      <img class="cloud9-item img-responsive" src="/assets/images/skills/yeoman.png" alt="Yeoman">
+    </div>
+    <div class="row">
+      <div class="col-xs-4 text-center">
+        <button class="carousel_left">
+          ←
+        </button>
+      </div>
+      <div class="col-xs-4">
+        <div class="carousel_title"></div>
+      </div>
+      <div class="col-xs-4 text-center">
+        <button class="carousel_right">
+          →
+        </button>
+      </div>
+    </div>
+  </section>
+</skills-component>
+
