@@ -15,6 +15,9 @@ function SkillsGallery(scope, element) {
     buttonLeft: angular.element(".carousel_left"),
     buttonRight: angular.element(".carousel_right"),
     autoPlay: 1,
+    yOrigin: 90,
+    yRadius: innerHeight / 8,
+    xRadius: innerWidth / 3.2,
     mirror: {
       gap: 12,
       height: 0.3,
@@ -23,11 +26,23 @@ function SkillsGallery(scope, element) {
     bringToFront: true,
     onRendered: rendered
   });
+
+  scope.$on('$root.resizeWidth', function(event, value){
+    console.log('width resize in directive', value);
+    scope.$apply();
+  });
+
+  scope.$on('$root.onLoadWidth', function(event, value){
+    console.log('width onLoad in directive', value);
+    scope.$apply();
+  });
+
+
+  function rendered(carousel) {
+    let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
+
+    element.find('.carousel_title').text(carousel.nearestItem().element.alt);
+    element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
+  }
 }
 
-function rendered(carousel) {
-  let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
-
-  angular.element('.carousel_title').text(carousel.nearestItem().element.alt);
-  angular.element('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
-}

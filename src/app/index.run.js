@@ -1,5 +1,7 @@
-export function runBlock($rootScope, $log) {
+export function runBlock($rootScope, $log, $window, $timeout) {
   'ngInject';
+
+  $rootScope.screenWidth = angular.element($window).width();
 
   let $stateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
     $log.debug('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
@@ -35,5 +37,26 @@ export function runBlock($rootScope, $log) {
     $stateChangeSuccess();
     $viewContentLoaded();
     $stateNotFound();
+  }
+
+  angular.element($window).on('resize', _debounce(function () {
+    $rootScope.screenWidth = angular.element($window).width();
+    $rootScope.$apply();
+    $rootScope.$emit('window:resize');
+  }, 100));
+
+  function _debounce(func, wait, immediate) {
+    let timeout;
+    return function () {
+      let context = this, args = arguments;
+      let later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      let callNow = immediate && !timeout;
+      $timeout.cancel(timeout);
+      timeout = $timeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
   }
 }
