@@ -25,23 +25,39 @@
 }
 
 /*test canvas circle*/
+.test-wrap {
+    display: inline-block;
+    position: relative;
+}
+
 .test {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     cursor: pointer;
     background: #4a8899;
+    position: relative;
+    z-index: 1;
 }
+
+.test-wrap canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
 /*end test canvas circle*/
 
 @media all and (max-width: 767px) {
     .cloud9-item {
-        position: relative!important;
-        transform: translate(0, 0)!important;
+        position: relative !important;
+        transform: translate(0, 0) !important;
         float: left;
-        width: 50%!important;
+        width: 50% !important;
         margin-bottom: 15px;
         padding: 15px;
-        height: auto!important;
+        height: auto !important;
     }
 
     #carousel {
@@ -49,12 +65,12 @@
     }
 
     #carousel img {
-        width: auto!important;
+        width: auto !important;
         margin: 0 auto;
     }
 
-    .cloud9-item canvas{
-        display: none!important;
+    .cloud9-item canvas {
+        display: none !important;
     }
 
     .wrapper-title {
