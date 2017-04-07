@@ -24,6 +24,15 @@
     cursor: pointer;
 }
 
+/*test canvas circle*/
+.test {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background: #4a8899;
+}
+/*end test canvas circle*/
+
 @media all and (max-width: 767px) {
     .cloud9-item {
         position: relative!important;
