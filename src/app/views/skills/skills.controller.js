@@ -1,12 +1,11 @@
 export class SkillsController {
-  constructor($scope, $rootScope) {
-    'ngInject';
+    constructor($scope, $rootScope) {
+        'ngInject';
 
-    console.log('Width on load in Controller', $rootScope.screenWidth);
-    $scope.$broadcast('$root.onLoadWidth', '');
+        let winResizeEvent = $rootScope.$on('window:resize', function () {
+            $rootScope.$broadcast('$root.resizeWidth', $rootScope.screenWidth);
+        });
 
-    $rootScope.$on('window:resize', function () {
-      $rootScope.$broadcast('$root.resizeWidth', $rootScope.screenWidth);
-    });
-  }
+        $rootScope.$on("$destroy", winResizeEvent);
+    }
 }

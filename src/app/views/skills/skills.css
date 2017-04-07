@@ -1,25 +1,54 @@
 #carousel {
-  width: 100%;
-  height: 420px;
-  margin-top: 12%;
-  margin-bottom: 5%;
+    width: 100%;
+    height: 420px;
+    margin-top: 12%;
+    margin-bottom: 5%;
 }
 
 #carousel img {
-  cursor: pointer;
-  width: auto;
-  max-width: 100%;
-  height: 120px;
+    cursor: pointer;
+    width: auto;
+    max-width: 100%;
+    height: 120px;
 }
 
 .carousel_title {
-  color: #F31414;
-  font-size: 2.9rem;
-  text-align: center;
+    color: #F31414;
+    font-size: 2.9rem;
+    text-align: center;
 }
 
 .carousel_arrows {
-  color: #F31414;
-  font-size: 3.4rem;
-  cursor: pointer;
+    color: #F31414;
+    font-size: 3.4rem;
+    cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+    .cloud9-item {
+        position: relative!important;
+        transform: translate(0, 0)!important;
+        float: left;
+        width: 50%!important;
+        margin-bottom: 15px;
+        padding: 15px;
+        height: auto!important;
+    }
+
+    #carousel {
+        height: auto;
+    }
+
+    #carousel img {
+        width: auto!important;
+        margin: 0 auto;
+    }
+
+    .cloud9-item canvas{
+        display: none!important;
+    }
+
+    .wrapper-title {
+        display: none;
+    }
 }

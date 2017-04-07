@@ -1,48 +1,54 @@
 export function SkillsDirective() {
-  'ngInject';
+    'ngInject';
 
-  return {
-    restrict: 'E',
-    replace: true,
-    link: SkillsGallery
-  }
+    return {
+        restrict: 'E',
+        replace: true,
+        link: SkillsGallery
+    }
 }
 
 function SkillsGallery(scope, element) {
-  'ngInject';
+    'ngInject';
 
-  element.find('#carousel').Cloud9Carousel({
-    buttonLeft: angular.element(".carousel_left"),
-    buttonRight: angular.element(".carousel_right"),
-    autoPlay: 1,
-    yOrigin: 90,
-    yRadius: innerHeight / 8,
-    xRadius: innerWidth / 3.2,
-    mirror: {
-      gap: 12,
-      height: 0.3,
-      opacity: 0.3
-    },
-    bringToFront: true,
-    onRendered: rendered
-  });
+    let windowResizeVal;
 
-  scope.$on('$root.resizeWidth', function(event, value){
-    console.log('width resize in directive', value);
-    scope.$apply();
-  });
+    scope.$on('$root.resizeWidth', function (event, value) {
+        // console.log('$$Width resize in directive', value);
+        windowResizeVal = value;
+        scope.$apply();
+    });
 
-  scope.$on('$root.onLoadWidth', function(event, value){
-    console.log('width onLoad in directive', value);
-    scope.$apply();
-  });
+    console.log('$$Width resize in directive', windowResizeVal);
 
+    element.find('#carousel').Cloud9Carousel({
+        buttonLeft: angular.element(".carousel_left"),
+        buttonRight: angular.element(".carousel_right"),
+        autoPlay: 1,
+        yOrigin: 90,
+        yRadius: innerHeight / 8,
+        xRadius: innerWidth / 3.2,
+        mirror: {
+            gap: 12,
+            height: 0.3,
+            opacity: 0.3
+        },
+        bringToFront: true,
+        onLoaded: loaded,
+        onRendered: rendered
+    });
 
-  function rendered(carousel) {
-    let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
+    function rendered(carousel) {
+        let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
 
-    element.find('.carousel_title').text(carousel.nearestItem().element.alt);
-    element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
-  }
+        element.find('.carousel_title').text(carousel.nearestItem().element.alt);
+        element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
+    }
+
+    function loaded(carousel) {
+        if (angular.element('body').width() <= 767) {
+            carousel.deactivate();
+        }
+    }
 }
 
