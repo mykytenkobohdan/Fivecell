@@ -39,7 +39,7 @@ function SkillsGallery(scope, element) {
             buttonRight: angular.element(".carousel_right"),
             autoPlay: 0,
             yOrigin: 90,
-            yRadius: innerHeight / 8,
+            yRadius: 120,
             xRadius: width / 2,
             mirror: {
                 gap: 12,
@@ -72,18 +72,17 @@ function SkillsGallery(scope, element) {
 
     function DrawCanvas(elem) {
         const width = elem.fullWidth * 2;
-        const height = elem.fullHeight * 2;
 
         angular.element('#skills').remove();
-        angular.element(elem.element).after('<canvas class="canvas-skills" id="skills" height="' + height + '" width="' + width + '"></canvas>');
+        angular.element(elem.element).after('<canvas class="canvas-skills" id="skills" height="' + width + '" width="' + width + '"></canvas>');
 
 
         let canvas = angular.element('#skills').get(0);
         let context = canvas.getContext('2d');
 
         const x = width / 2;
-        const y = height / 2;
-        const radius = Math.ceil(Math.sqrt(Math.pow((width / 2), 2) + Math.pow((height / 2), 2)) / 2) + 6;
+        const y = width / 2;
+        const radius = Math.ceil(Math.sqrt(Math.pow((width / 2), 2) + Math.pow((width / 2), 2)) / 2) + 6;
         let endPercent = angular.element(elem.element).children('img').data('skill');
         let startPercent = 0;
         const circ = Math.PI * 2;
