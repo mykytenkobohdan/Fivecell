@@ -24,30 +24,14 @@
     cursor: pointer;
 }
 
-/*test canvas circle*/
-.test-wrap {
-    display: inline-block;
-    position: relative;
-}
+/* canvas circle*/
 
-.test {
-    width: 120px;
-    height: 120px;
-    cursor: pointer;
-    background: #4a8899;
-    position: relative;
-    z-index: 1;
-}
-
-.test-wrap canvas {
+.canvas-skills {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+    transform: translateX(-50%);
+    bottom: 30px;
 }
-
-/*end test canvas circle*/
 
 @media all and (max-width: 767px) {
     .cloud9-item {

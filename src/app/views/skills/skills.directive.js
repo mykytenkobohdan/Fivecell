@@ -37,7 +37,7 @@ function SkillsGallery(scope, element) {
         return element.find('#carousel').Cloud9Carousel({
             buttonLeft: angular.element(".carousel_left"),
             buttonRight: angular.element(".carousel_right"),
-            autoPlay: 1,
+            autoPlay: 0,
             yOrigin: 90,
             yRadius: innerHeight / 8,
             xRadius: width / 2,
@@ -58,10 +58,10 @@ function SkillsGallery(scope, element) {
 
     function rendered(carousel) {
         let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
-        console.log(carousel.nearestItem());
-
         element.find('.carousel_title').text(carousel.nearestItem().element.alt);
         element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
+
+        DrawCanvas(carousel.nearestItem());
     }
 
     function loaded(carousel) {
@@ -70,37 +70,35 @@ function SkillsGallery(scope, element) {
         }
     }
 
-//    canvas test
-    angular.element('.test').click(function () {
-        const width = parseFloat(angular.element(this).css('width')) * 2;
-        const height = parseFloat(angular.element(this).css('height')) * 2;
+    function DrawCanvas(elem) {
+        const width = elem.fullWidth * 2;
+        const height = elem.fullHeight * 2;
 
-        angular.element('.test-wrap #skills').remove();
-        angular.element(this).after('<canvas id="skills" height="' + height + '" width="' + width + '"></canvas>');
+        angular.element('#skills').remove();
+        angular.element('#carousel').append('<canvas class="canvas-skills" id="skills" height="' + height + '" width="' + width + '"></canvas>');
 
 
-        let canvas = angular.element('.test-wrap canvas').get(0);
+        let canvas = angular.element('#skills').get(0);
         let context = canvas.getContext('2d');
+
         const x = width / 2;
         const y = height / 2;
-
         const radius = Math.ceil(Math.sqrt(Math.pow((width / 2), 2) + Math.pow((height / 2), 2)) / 2) + 6;
-
-        let endPercent = 101;
+        let endPercent = angular.element(elem.element).children('img').data('skill');
         let startPercent = 0;
         const circ = Math.PI * 2;
         const quart = Math.PI / 2;
 
-        context.lineWidth = 12;
-        context.strokeStyle = '#ad2323';
-        context.shadowOffsetX = 0;
-        context.shadowOffsetY = 0;
-        context.shadowBlur = 10;
-        context.shadowColor = '#656565';
-
         renderScene();
 
         function renderScene(current) {
+            context.lineWidth = 12;
+            context.strokeStyle = '#ad2323';
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
+            context.shadowBlur = 10;
+            context.shadowColor = '#656565';
+
             context.clearRect(0, 0, canvas.width, canvas.height);
             context.beginPath();
 
@@ -114,7 +112,6 @@ function SkillsGallery(scope, element) {
                 });
             }
         }
-    });
-
+    }
 }
 
