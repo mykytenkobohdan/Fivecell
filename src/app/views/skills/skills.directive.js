@@ -95,8 +95,13 @@ function SkillsGallery(scope, element) {
          * @param current
          */
         function renderScene(current) {
+            let gradient = context.createLinearGradient(0, 0, 0, 200);
+            gradient.addColorStop("0", "#ad2323");
+            gradient.addColorStop("0.7", "#ad2323");
+            gradient.addColorStop("1.0", "rgba(255, 255, 255, 0)");
+
             context.lineWidth = 12;
-            context.strokeStyle = '#ad2323';
+            context.strokeStyle = gradient;
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.shadowBlur = 10;
