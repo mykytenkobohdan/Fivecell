@@ -75,7 +75,7 @@ function SkillsGallery(scope, element) {
         const height = elem.fullHeight * 2;
 
         angular.element('#skills').remove();
-        angular.element('#carousel').append('<canvas class="canvas-skills" id="skills" height="' + height + '" width="' + width + '"></canvas>');
+        angular.element(elem.element).after('<canvas class="canvas-skills" id="skills" height="' + height + '" width="' + width + '"></canvas>');
 
 
         let canvas = angular.element('#skills').get(0);

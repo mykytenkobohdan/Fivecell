@@ -60,4 +60,8 @@
     .wrapper-title {
         display: none;
     }
+
+    #skills {
+        display: none!important;
+    }
 }
