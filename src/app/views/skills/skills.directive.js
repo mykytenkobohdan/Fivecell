@@ -71,7 +71,7 @@ function SkillsGallery(scope, element) {
     }
 
     function DrawCanvas(elem) {
-        const width = elem.fullWidth * 2;
+        const width = 240;
 
         angular.element('#skills').remove();
         angular.element(elem.element).after('<canvas class="canvas-skills" id="skills" height="' + width + '" width="' + width + '"></canvas>');
