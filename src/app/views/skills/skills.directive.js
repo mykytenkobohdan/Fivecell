@@ -90,6 +90,10 @@ function SkillsGallery(scope, element) {
 
         renderScene();
 
+        /**
+         * @function for draw circle and his animate
+         * @param current
+         */
         function renderScene(current) {
             context.lineWidth = 12;
             context.strokeStyle = '#ad2323';
