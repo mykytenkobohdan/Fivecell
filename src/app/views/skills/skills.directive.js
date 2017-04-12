@@ -15,6 +15,8 @@ function SkillsGallery(scope, element) {
 
     activateCarousel(windowResizeVal);
 
+    console.log('SCOPE', scope.$parent.startGallery);
+
     scope.$on('$root.resizeWidth', function (event, value) {
         deactivateCarousel();
 
@@ -42,7 +44,7 @@ function SkillsGallery(scope, element) {
             buttonLeft: angular.element(".carousel_left"),
             buttonRight: angular.element(".carousel_right"),
             autoPlay: 1,
-            autoPlayDelay:3000,
+            autoPlayDelay: 3000,
             yOrigin: 90,
             yRadius: 120,
             xRadius: width / 2,

@@ -16,6 +16,7 @@ export function runBlock($rootScope, $log, $window, $timeout) {
     $log.debug('$stateChangeSuccess to ' + toState.name + '- fired once the state transition is complete.', toState);
     //Set the variable "showHeader" from state parameters UI routers "showheader"
     $rootScope.showHeader = toState.showheader != false;
+    $rootScope.startGallery = toState.startgallery;
   });
 
   let $viewContentLoaded = $rootScope.$on('$viewContentLoaded', function (event) {

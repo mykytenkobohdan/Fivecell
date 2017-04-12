@@ -28,7 +28,8 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
       url: '/skills',
       templateUrl: 'app/views/skills/skills.html',
       controller: 'SkillsController',
-      controllerAs: 'skills'
+      controllerAs: 'skills',
+      startgallery: true
     })
     .state('projects', {
       url: '/projects',
