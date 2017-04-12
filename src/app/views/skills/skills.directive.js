@@ -4,7 +4,8 @@ export function SkillsDirective() {
     return {
         restrict: 'E',
         replace: true,
-        link: SkillsGallery
+        link: SkillsGallery,
+        bindToController: true
     }
 }
 
@@ -13,31 +14,43 @@ function SkillsGallery(scope, element) {
 
     let windowResizeVal = element.find('.container').width();
 
-    activateCarousel(windowResizeVal);
 
-    console.log('SCOPE', scope.$parent.startGallery);
 
-    scope.$on('$root.resizeWidth', function (event, value) {
-        deactivateCarousel();
+    // console.log('SCOPE', scope.$parent.startGallery);
 
-        if (value >= 1200) {
-            activateCarousel(1200);
-        }
-
-        if (value >= 992 && value < 1200) {
-            activateCarousel(992)
-        }
-
-        if (value >= 768 && value < 992) {
-            activateCarousel(768)
-        }
-
-        if (value < 768) {
-            ProgressBarMobile();
-        }
+    scope.$on('gallery', function (event, value) {
+        console.log('VALUE', value);
 
         scope.$apply();
     });
+
+    if (scope.$parent.startGallery) {
+        activateCarousel(windowResizeVal);
+        scope.$on('$root.resizeWidth', function (event, value) {
+            deactivateCarousel();
+
+            if (value >= 1200) {
+                activateCarousel(1200);
+            }
+
+            if (value >= 992 && value < 1200) {
+                activateCarousel(992)
+            }
+
+            if (value >= 768 && value < 992) {
+                activateCarousel(768)
+            }
+
+            if (value < 768) {
+                ProgressBarMobile();
+            }
+
+            scope.$apply();
+        });
+    } else {
+        deactivateCarousel();
+    }
+
 
     function activateCarousel(width) {
         return element.find('#carousel').Cloud9Carousel({
@@ -84,8 +97,7 @@ function SkillsGallery(scope, element) {
         angular.element('#skills').remove();
         angular.element(elem.element).after('<canvas class="canvas-skills" id="skills" height="' + width + '" width="' + width + '"></canvas>');
 
-
-        let canvas = angular.element('#skills').get(0);
+        let canvas = element.find('#skills').get(0);
         let context = canvas.getContext('2d');
 
         const x = width / 2;
