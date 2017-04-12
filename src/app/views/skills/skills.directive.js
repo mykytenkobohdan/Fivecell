@@ -121,5 +121,13 @@ function SkillsGallery(scope, element) {
             }
         }
     }
+
+    element.find('.cloud9-item').click(function (e) {
+        let widthBar = angular.element(this).data('skill');
+
+        element.find('.progress-wrapper').remove();
+        angular.element(this).parent().append('<div class="progress-wrapper visible-xs"><div class="progress-line"></div></div>')
+        angular.element('.progress-line').css('width', () => widthBar + '%');
+    });
 }
 
