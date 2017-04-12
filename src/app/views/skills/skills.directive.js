@@ -30,6 +30,10 @@ function SkillsGallery(scope, element) {
             activateCarousel(768)
         }
 
+        if (value < 768) {
+            ProgressBarMobile();
+        }
+
         scope.$apply();
     });
 
@@ -37,7 +41,8 @@ function SkillsGallery(scope, element) {
         return element.find('#carousel').Cloud9Carousel({
             buttonLeft: angular.element(".carousel_left"),
             buttonRight: angular.element(".carousel_right"),
-            autoPlay: 0,
+            autoPlay: 1,
+            autoPlayDelay:3000,
             yOrigin: 90,
             yRadius: 120,
             xRadius: width / 2,
@@ -67,6 +72,7 @@ function SkillsGallery(scope, element) {
     function loaded(carousel) {
         if (windowResizeVal <= 767) {
             carousel.deactivate();
+            ProgressBarMobile();
         }
     }
 
@@ -122,12 +128,14 @@ function SkillsGallery(scope, element) {
         }
     }
 
-    element.find('.cloud9-item').click(function (e) {
-        let widthBar = angular.element(this).data('skill');
+    function ProgressBarMobile() {
+        element.find('.cloud9-item img').click(function (e) {
+            let widthBar = angular.element(this).data('skill');
 
-        element.find('.progress-wrapper').remove();
-        angular.element(this).parent().append('<div class="progress-wrapper visible-xs"><div class="progress-line"></div></div>')
-        angular.element('.progress-line').css('width', () => widthBar + '%');
-    });
+            element.find('.progress-wrapper').remove();
+            angular.element(this).parent().append('<div class="progress-wrapper visible-xs"><div class="progress-line"></div></div>')
+            angular.element('.progress-line').css('width', () => widthBar + '%');
+        });
+    }
 }
 
