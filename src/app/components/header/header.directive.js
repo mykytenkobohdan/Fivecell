@@ -28,7 +28,6 @@ class HeaderController {
     vm.root = $rootScope;
     vm.toggle = false;
     vm.menu = false;
-    vm.$scopeOn = $scope.$on();
 
     if (localLang) {
       vm.saveLang(localLang);
