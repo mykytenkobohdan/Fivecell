@@ -14,43 +14,34 @@ function SkillsGallery(scope, element) {
 
     let windowResizeVal = element.find('.container').width();
 
-
-
-    // console.log('SCOPE', scope.$parent.startGallery);
-
     scope.$on('gallery', function (event, value) {
         console.log('VALUE', value);
 
         scope.$apply();
     });
 
-    if (scope.$parent.startGallery) {
-        activateCarousel(windowResizeVal);
-        scope.$on('$root.resizeWidth', function (event, value) {
-            deactivateCarousel();
-
-            if (value >= 1200) {
-                activateCarousel(1200);
-            }
-
-            if (value >= 992 && value < 1200) {
-                activateCarousel(992)
-            }
-
-            if (value >= 768 && value < 992) {
-                activateCarousel(768)
-            }
-
-            if (value < 768) {
-                ProgressBarMobile();
-            }
-
-            scope.$apply();
-        });
-    } else {
+    activateCarousel(windowResizeVal);
+    scope.$on('$root.resizeWidth', function (event, value) {
         deactivateCarousel();
-    }
 
+        if (value >= 1200) {
+            activateCarousel(1200);
+        }
+
+        if (value >= 992 && value < 1200) {
+            activateCarousel(992)
+        }
+
+        if (value >= 768 && value < 992) {
+            activateCarousel(768)
+        }
+
+        if (value < 768) {
+            ProgressBarMobile();
+        }
+
+        scope.$apply();
+    });
 
     function activateCarousel(width) {
         return element.find('#carousel').Cloud9Carousel({
@@ -77,6 +68,11 @@ function SkillsGallery(scope, element) {
     }
 
     function rendered(carousel) {
+        // if (!scope.$parent.startGallery) {
+        //     console.log('RENDERER FALSE', scope.$parent.startGallery);
+        //     carousel.deactivate();
+        // }
+
         let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
         element.find('.carousel_title').text(carousel.nearestItem().element.alt);
         element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
