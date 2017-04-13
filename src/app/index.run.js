@@ -17,6 +17,8 @@ export function runBlock($rootScope, $log, $window, $timeout) {
     //Set the variable "showHeader" from state parameters UI routers "showheader"
     $rootScope.showHeader = toState.showheader != false;
     $rootScope.startGallery = toState.startgallery;
+
+      console.log('HAS CLASS', !angular.element('.container').hasClass('carousel'));
   });
 
   let $viewContentLoaded = $rootScope.$on('$viewContentLoaded', function (event) {

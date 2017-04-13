@@ -20,6 +20,11 @@ function SkillsGallery(scope, element) {
         scope.$apply();
     });
 
+    if (angular.element('.container').hasClass('carousel')) {
+
+    }
+
+
     activateCarousel(windowResizeVal);
     scope.$on('$root.resizeWidth', function (event, value) {
         deactivateCarousel();
@@ -68,11 +73,6 @@ function SkillsGallery(scope, element) {
     }
 
     function rendered(carousel) {
-        // if (!scope.$parent.startGallery) {
-        //     console.log('RENDERER FALSE', scope.$parent.startGallery);
-        //     carousel.deactivate();
-        // }
-
         let fade = Math.cos((carousel.floatIndex() % 1) * 2 * Math.PI);
         element.find('.carousel_title').text(carousel.nearestItem().element.alt);
         element.find('.carousel_title').css('opacity', 0.5 + (0.5 * fade));
