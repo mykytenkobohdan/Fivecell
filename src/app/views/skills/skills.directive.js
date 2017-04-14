@@ -14,18 +14,8 @@ function SkillsGallery(scope, element) {
 
     let windowResizeVal = element.find('.container').width();
 
-    scope.$on('gallery', function (event, value) {
-        console.log('VALUE', value);
-
-        scope.$apply();
-    });
-
-    if (angular.element('.container').hasClass('carousel')) {
-
-    }
-
-
     activateCarousel(windowResizeVal);
+
     scope.$on('$root.resizeWidth', function (event, value) {
         deactivateCarousel();
 

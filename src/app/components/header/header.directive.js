@@ -19,7 +19,7 @@ export function HeaderDirective() {
 }
 
 class HeaderController {
-    constructor($scope, $rootScope, $translate) {
+    constructor($scope, $rootScope, $translate, $window) {
         'ngInject';
 
         let vm = this;
@@ -28,6 +28,7 @@ class HeaderController {
         vm.root = $rootScope;
         vm.toggle = false;
         vm.menu = false;
+        vm.$window = $window;
 
         if (localLang) {
             vm.saveLang(localLang);
@@ -53,5 +54,9 @@ class HeaderController {
         this.language = language;
         this.root.language = language;
         this.translate.use(language);
+    }
+
+    reload() {
+        this.$window.location.replace('http://localhost:3000/skills');
     }
 }

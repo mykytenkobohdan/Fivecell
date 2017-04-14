@@ -1,13 +1,17 @@
 export class SkillsController {
-    constructor($scope, $rootScope) {
+    constructor($rootScope, $window) {
         'ngInject';
+
+        this.$window = $window;
 
         let winResizeEvent = $rootScope.$on('window:resize', function () {
             $rootScope.$broadcast('$root.resizeWidth', $rootScope.screenWidth);
         });
 
-        $rootScope.$broadcast('gallery', $rootScope.startGallery);
-
         $rootScope.$on("$destroy", winResizeEvent);
     }
+
+    // reload() {
+    //     this.$window.location.reload();
+    // }
 }

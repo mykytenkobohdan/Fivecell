@@ -13,16 +13,9 @@ export function runBlock($rootScope, $log, $window, $timeout) {
     });
 
     let $stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        $log.debug('$stateChangeSuccess to ' + toState.name.toUpperCase() + ' - fired once the state transition is complete.', toState);
+        $log.debug('$stateChangeSuccess to ' + toState.name + ' - fired once the state transition is complete.', toState);
         //Set the variable "showHeader" from state parameters UI routers "showheader"
         $rootScope.showHeader = toState.showheader != false;
-        $rootScope.startGallery = toState.startgallery;
-
-        if (toState.name === 'skills') {
-            console.log('CHLEISHE');
-        } else {
-            console.log('NOT SKILLS')
-        }
     });
 
     let $viewContentLoaded = $rootScope.$on('$viewContentLoaded', function (event) {
