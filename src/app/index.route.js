@@ -6,8 +6,7 @@ export function routerConfig($stateProvider, $urlRouterProvider, $locationProvid
             url: '/',
             templateUrl: 'app/views/home/home.html',
             controller: 'HomeController',
-            controllerAs: 'home',
-            showheader: false
+            controllerAs: 'home'
         })
         .state('contact', {
             url: '/contact',

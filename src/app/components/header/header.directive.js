@@ -19,11 +19,13 @@ export function HeaderDirective() {
 }
 
 class HeaderController {
-    constructor($scope, $rootScope, $translate, $window) {
+    constructor($scope, $rootScope, $translate, $window, constants) {
         'ngInject';
 
         let vm = this;
         let localLang = localStorage.getItem('lang');
+
+        vm.hostSkills = constants.HOST_NAME_SKILLS;
         vm.translate = $translate;
         vm.root = $rootScope;
         vm.toggle = false;
@@ -57,6 +59,6 @@ class HeaderController {
     }
 
     reload() {
-        this.$window.location.replace('http://localhost:3000/skills');
+        this.$window.location.replace(this.hostSkills);
     }
 }

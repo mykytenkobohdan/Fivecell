@@ -2,6 +2,7 @@ import {config} from './index.config';
 import {routerConfig} from './index.route';
 import {runBlock} from './index.run';
 import {translateConfig} from './translate/translate.config';
+import {Constants} from './index.constants'
 
 import {SendMailService} from './services/send-mail.service';
 
@@ -16,32 +17,34 @@ import {ParallaxDirective} from './components/parallax/parallax.directive';
 import {SkillsDirective} from './views/skills/skills.directive';
 
 angular.module('fivecellArchitects',
-  [
-    'ngAnimate',
-    'ngCookies',
-    'ngTouch',
-    'ngSanitize',
-    'ngMessages',
-    'ngAria',
-    'ngResource',
-    'ui.router',
-    'toastr',
-    'pascalprecht.translate'
-  ])
-  .config(config)
-  .config(routerConfig)
-  .config(translateConfig)
+    [
+        'ngAnimate',
+        'ngCookies',
+        'ngTouch',
+        'ngSanitize',
+        'ngMessages',
+        'ngAria',
+        'ngResource',
+        'ui.router',
+        'toastr',
+        'pascalprecht.translate'
+    ])
+    .config(config)
+    .config(routerConfig)
+    .config(translateConfig)
 
-  .run(runBlock)
+    .constant('constants', Constants)
 
-  .service('SendMailService', SendMailService)
+    .run(runBlock)
 
-  .controller('HomeController', HomeController)
-  .controller('ContactController', ContactController)
-  .controller('ProjectsController', ProjectsController)
-  .controller('AboutController', AboutController)
-  .controller('SkillsController', SkillsController)
+    .service('SendMailService', SendMailService)
 
-  .directive('headerComponent', HeaderDirective)
-  .directive('parallaxComponent', ParallaxDirective)
-  .directive('skillsComponent', SkillsDirective);
+    .controller('HomeController', HomeController)
+    .controller('ContactController', ContactController)
+    .controller('ProjectsController', ProjectsController)
+    .controller('AboutController', AboutController)
+    .controller('SkillsController', SkillsController)
+
+    .directive('headerComponent', HeaderDirective)
+    .directive('parallaxComponent', ParallaxDirective)
+    .directive('skillsComponent', SkillsDirective);
