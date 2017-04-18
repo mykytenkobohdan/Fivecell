@@ -74,3 +74,9 @@ section.container {
   margin-top: 25px;
 }
 
+@media all and (max-width: 767px) and (orientation: landscape) {
+  section.container {
+    margin-top: 0;
+  }
+}
+
