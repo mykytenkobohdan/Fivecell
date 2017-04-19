@@ -1,5 +1,117 @@
+.project-wrap {
+    margin-top: 10%;
+}
+
 .project {
     position: relative;
     height: 270px;
-    background: #0f0f0f;
+    overflow: hidden;
+}
+
+.project_image {
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.git-service {
+    display: block;
+    padding: 10px;
+    position: absolute;
+    z-index: 3;
+    right: -40%;
+    width: 100%;
+    text-align: center;
+    transform: rotate(45deg);
+    top: 9%;
+    font-weight: bold;
+    color: #fff;
+}
+
+.git-service:hover,
+.git-service:focus {
+    color: #fff;
+}
+
+.git-service--bitbucket {
+    background: #205081;
+}
+
+.project_overlay {
+    z-index: 2;
+    color: #1ba49c;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project:hover .project_overlay {
+    bottom: 0;
+}
+
+.project_overlay-develop {
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.project_overlay-name {
+    font-size: 20px;
+}
+
+.project_technology {
+    width: 80%;
+    margin:0 auto;
+}
+
+.project_technology-item {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 5px 10px;
+    background-color: #464545;
+    color: #999;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.project_view-site {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    color: #1ba49c;
+    transition: 1s;
+    text-decoration: underline;
+}
+
+.project_view-site:focus {
+    color: #1ba49c;
+    text-decoration: underline;
+}
+
+.project_view-site:hover {
+    color: #1ba49c;
+    text-decoration: none;
+}
+
+@media all and (max-width: 767px) {
+    .project {
+        height: auto;
+    }
+
+    .project_image {
+        width: 100%;
+        height: auto;
+    }
 }
