@@ -40,6 +40,10 @@
     background: #205081;
 }
 
+.git-service--github {
+    background: #24292e;
+}
+
 .project_overlay {
     z-index: 2;
     color: #1ba49c;
@@ -72,7 +76,7 @@
 
 .project_technology {
     width: 80%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .project_technology-item {
@@ -113,5 +117,9 @@
     .project_image {
         width: 100%;
         height: auto;
+    }
+
+    .project-wrap > div {
+        margin-bottom: 30px;
     }
 }
