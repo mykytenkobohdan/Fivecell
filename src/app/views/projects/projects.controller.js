@@ -1,9 +1,15 @@
 export class ProjectsController {
-    constructor(GetProjectsService) {
+    constructor(GetProjects) {
         'ngInject';
 
-        let data = GetProjectsService;
+        let vm = this;
 
-        console.log(data);
+        vm.otherProject = {};
+
+        GetProjects.getOtherProjects()
+            .then(function (response) {
+                vm.otherProject = response.data;
+                console.log('DATA', vm.otherProject);
+            });
     }
 }

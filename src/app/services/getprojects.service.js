@@ -1,17 +1,23 @@
-export function GetProjectsService($http, $log) {
+export function GetProjects($http, $log, $q) {
     'ngInject';
 
-    let vm = this;
+    return {
+        getOtherProjects: function () {
+            let deferred = $q.defer();
+            let httpPromise = $http.get('/app/test-db/test-db.json');
 
-    $http.get('/app/test-db/test-db.json').then(successCallback, errorCallback);
+            httpPromise.then(successCallback, errorCallback);
 
-    function successCallback(response) {
-        console.log(response.data);
-        return vm.projects = response.data;
-    }
+            function successCallback(response) {
+                deferred.resolve(response);
+            }
 
-    function errorCallback(response) {
-        $log.log('An unknown error occurred.', response.message);
-    }
+            function errorCallback(response) {
+                $log.log('An unknown error occurred. ', response.statusText);
+            }
+
+            return deferred.promise;
+        }
+    };
 
 }

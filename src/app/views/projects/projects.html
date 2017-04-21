@@ -67,5 +67,11 @@
                 </div>
             </div>
         </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="project in projects.otherProject">
+                <a href="{{project.url}}"
+                   target="_blank">{{project.name}}</a>
+            </li>
+        </ul>
     </section>
 </div>
