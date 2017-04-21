@@ -1,6 +1,7 @@
 export class ProjectsController {
     constructor(GetProjectsService) {
         'ngInject';
-        console.log(GetProjectsService);
+
+        console.log('This is data base', GetProjectsService);
     }
 }

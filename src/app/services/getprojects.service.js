@@ -1,11 +1,12 @@
 export function GetProjectsService($http, $log) {
     'ngInject';
 
+    let vm = this;
+
     $http.get('/app/test-db/test-db.json').then(successCallback, errorCallback);
 
     function successCallback(response) {
-        $log.log('This is data base', angular.toJson(response, 2));
-        return response;
+        return vm.projects = response.data;
     }
 
     function errorCallback(response) {
