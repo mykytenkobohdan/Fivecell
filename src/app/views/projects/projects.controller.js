@@ -1,5 +1,6 @@
 export class ProjectsController {
-  constructor () {
-
-  }
+    constructor(GetProjectsService) {
+        'ngInject';
+        console.log(GetProjectsService);
+    }
 }

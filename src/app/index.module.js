@@ -5,6 +5,7 @@ import {translateConfig} from './translate/translate.config';
 import {Constants} from './index.constants'
 
 import {SendMailService} from './services/send-mail.service';
+import {GetProjectsService} from './services/getprojects.service';
 
 import {HomeController} from './views/home/home.controller';
 import {ContactController} from  './views/contact/contact.controller';
@@ -38,6 +39,7 @@ angular.module('fivecellArchitects',
     .run(runBlock)
 
     .service('SendMailService', SendMailService)
+    .service('GetProjectsService', GetProjectsService)
 
     .controller('HomeController', HomeController)
     .controller('ContactController', ContactController)
