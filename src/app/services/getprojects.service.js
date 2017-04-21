@@ -6,6 +6,7 @@ export function GetProjectsService($http, $log) {
     $http.get('/app/test-db/test-db.json').then(successCallback, errorCallback);
 
     function successCallback(response) {
+        console.log(response.data);
         return vm.projects = response.data;
     }
 
