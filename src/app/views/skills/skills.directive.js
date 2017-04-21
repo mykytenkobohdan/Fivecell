@@ -129,7 +129,7 @@ function SkillsGallery(scope, element) {
     }
 
     function ProgressBarMobile() {
-        element.find('.cloud9-item img').click(function (e) {
+        element.find('.cloud9-item img').click(function () {
             let widthBar = angular.element(this).data('skill');
 
             element.find('.progress-wrapper').remove();
