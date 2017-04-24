@@ -19,7 +19,8 @@
                             <li class="project_technology-item">Bootstrap</li>
                             <li class="project_technology-item">VideoJS</li>
                         </ul>
-                        <a target="_blank" class="project_view-site" href="http://skaia.fi/">{{'VIEW_SITE' | translate}}</a>
+                        <a target="_blank" class="project_view-site" href="http://skaia.fi/">{{'VIEW_SITE' |
+                            translate}}</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +42,8 @@
                             <li class="project_technology-item">NodeJS</li>
                             <li class="project_technology-item">ExpressJS</li>
                         </ul>
-                        <a target="_blank" class="project_view-site" href="https://myangular-app.herokuapp.com/">{{'VIEW_SITE' | translate}}</a>
+                        <a target="_blank" class="project_view-site" href="https://myangular-app.herokuapp.com/">{{'VIEW_SITE'
+                            | translate}}</a>
                     </div>
                 </div>
             </div>
@@ -62,16 +64,33 @@
                             <li class="project_technology-item">NodeJS</li>
                             <li class="project_technology-item">ExpressJS</li>
                         </ul>
-                        <a target="_blank" class="project_view-site" href="https://myfportfolio.herokuapp.com/">{{'VIEW_SITE' | translate}}</a>
+                        <a target="_blank" class="project_view-site" href="https://myfportfolio.herokuapp.com/">{{'VIEW_SITE'
+                            | translate}}</a>
                     </div>
                 </div>
             </div>
         </div>
-        <ul class="nav nav-pills nav-stacked">
-            <li ng-repeat="project in projects.otherProject">
-                <a href="{{project.url}}"
-                   target="_blank">{{project.name}}</a>
-            </li>
-        </ul>
+        <div class="row project-wrap">
+            <div class="col-sm-6 col-md-4" ng-repeat="project in projects.otherProject">
+                <div class="project">
+                    <a href="{{project.gitService.url}}" target="_blank"
+                       class="git-service git-service--bitbucket">{{project.gitService.name}}</a>
+                    <img class="project_image" ng-src="{{project.imageUrl}}" alt="skaia">
+                    <div class="project_overlay text-center">
+                        <div>
+                            <h3 class="project_overlay-name">{{project.name}}</h3>
+                            <div class="project_overlay-develop">{{project.development}}</div>
+                        </div>
+                        <ul class="project_technology text-center">
+                            <li class="project_technology-item">jQuery</li>
+                            <li class="project_technology-item">CSS</li>
+                            <li class="project_technology-item">Bootstrap</li>
+                            <li class="project_technology-item">VideoJS</li>
+                        </ul>
+                        <a target="_blank" class="project_view-site" href="{{project.url}}">{{'VIEW_SITE' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
