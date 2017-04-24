@@ -9,7 +9,6 @@ export class ProjectsController {
         GetProjects.getOtherProjects()
             .then(function (response) {
                 vm.otherProject = response.data;
-                console.log('DATA', vm.otherProject);
             });
     }
 }

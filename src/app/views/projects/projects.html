@@ -74,7 +74,7 @@
             <div class="col-sm-6 col-md-4" ng-repeat="project in projects.otherProject">
                 <div class="project">
                     <a href="{{project.gitService.url}}" target="_blank"
-                       class="git-service git-service--bitbucket">{{project.gitService.name}}</a>
+                       class="git-service" ng-class="project.gitService.name == 'Bitbucket' ? 'git-service--bitbucket' : 'git-service--github'">{{project.gitService.name}}</a>
                     <img class="project_image" ng-src="{{project.imageUrl}}" alt="skaia">
                     <div class="project_overlay text-center">
                         <div>
