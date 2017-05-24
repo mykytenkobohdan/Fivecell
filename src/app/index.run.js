@@ -7,7 +7,7 @@ export function runBlock($rootScope, $log, $window, $timeout) {
         $log.debug('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
     });
 
-    let $stateChangeError = $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams) {
+    let $stateChangeError = $rootScope.$on('$stateChangeError', function () {
         $log.debug('$stateChangeError - fired when an error occurs during transition.');
         $log.debug(arguments);
     });
