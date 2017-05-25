@@ -8,15 +8,6 @@ export function SendMailService($http, $q) {
         //   reject(new Error("Network Error"));
         // });
         let response = $http.post('/api', data);
-        // let response = $http({
-        //     method: "post",
-        //     url: "/api",
-        //     data: {
-        //         "name": name,
-        //         "email": email,
-        //         "text": text
-        //     }
-        // });
 
         return response.then(handleSuccess, handleError);
     };
