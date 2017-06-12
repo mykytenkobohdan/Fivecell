@@ -33,6 +33,21 @@
     bottom: 7%;
 }
 
+.skills-bar-wrap {
+    width: 40%;
+    height: 30px;
+    margin: -20px auto 20px;
+    transition: 0.4s;
+    background: #fff;
+}
+
+.skill-bar {
+    height: 100%;
+    width: 0;
+    background: #666666;
+    transition: 0.4s;
+}
+
 @media all and (max-width: 767px) {
     .cloud9-item {
         position: relative !important;
@@ -61,10 +76,6 @@
 
     .wrapper-title {
         display: none;
-    }
-
-    .canvas-skills {
-        display: none!important;
     }
 
     .progress-wrapper {

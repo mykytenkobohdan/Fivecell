@@ -4,27 +4,27 @@ export function runBlock($rootScope, $log, $window, $timeout) {
     $rootScope.screenWidth = angular.element($window).width();
 
     let $stateChangeStart = $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
-        $log.debug('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
+        $log.log('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
     });
 
     let $stateChangeError = $rootScope.$on('$stateChangeError', function () {
-        $log.debug('$stateChangeError - fired when an error occurs during transition.');
-        $log.debug(arguments);
+        $log.log('$stateChangeError - fired when an error occurs during transition.');
+        $log.log(arguments);
     });
 
     let $stateChangeSuccess = $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        $log.debug('$stateChangeSuccess to ' + toState.name + ' - fired once the state transition is complete.', toState);
+        $log.log('$stateChangeSuccess to ' + toState.name + ' - fired once the state transition is complete.', toState);
         //Set the variable "showHeader" from state parameters UI routers "showheader"
         $rootScope.showHeader = toState.showheader != false;
     });
 
     let $viewContentLoaded = $rootScope.$on('$viewContentLoaded', function (event) {
-        $log.debug('$viewContentLoaded - fired after dom rendered', event);
+        $log.log('$viewContentLoaded - fired after dom rendered', event);
     });
 
     let $stateNotFound = $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
-        $log.debug('$stateNotFound ' + unfoundState.to + '  - fired when a state cannot be found by its name.');
-        $log.debug(unfoundState, fromState, fromParams);
+        $log.log('$stateNotFound ' + unfoundState.to + '  - fired when a state cannot be found by its name.');
+        $log.log(unfoundState, fromState, fromParams);
     });
 
     $rootScope.$on('$destroy', function () {

@@ -10,8 +10,4 @@ export class SkillsController {
 
         $rootScope.$on("$destroy", winResizeEvent);
     }
-
-    // reload() {
-    //     this.$window.location.reload();
-    // }
 }

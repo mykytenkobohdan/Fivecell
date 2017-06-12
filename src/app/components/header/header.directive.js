@@ -19,13 +19,12 @@ export function HeaderDirective() {
 }
 
 class HeaderController {
-    constructor($scope, $rootScope, $translate, $window, constants) {
+    constructor($scope, $rootScope, $translate, $window) {
         'ngInject';
 
         let vm = this;
         let localLang = localStorage.getItem('lang');
 
-        vm.hostSkills = constants.HOST_NAME_SKILLS;
         vm.translate = $translate;
         vm.root = $rootScope;
         vm.toggle = false;
@@ -56,9 +55,5 @@ class HeaderController {
         this.language = language;
         this.root.language = language;
         this.translate.use(language);
-    }
-
-    reload() {
-        this.$window.location.replace(this.hostSkills);
     }
 }
